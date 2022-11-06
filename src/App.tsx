@@ -1,43 +1,42 @@
 import React from 'react';
 import logo from './logo.svg';
-import styles from './App.module.css';
-import { Layout, Typography, Input, Menu, Button, Dropdown} from "antd"
-import { GlobalOutlined } from "@ant-design/icons"
+import styles from "./App.module.css";
+import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
+import { GlobalOutlined } from "@ant-design/icons";
 
 function App() {
-
-  const items = [
-    { label: "English", key:'en-1' }, 
-    { label: "中文", key:'zh-2' }
-  ];
-
   return (
     <div className={styles.App}>
-
       <div className={styles["app-header"]}>
+        {/* top-header */}
         <div className={styles["top-header"]}>
           <div className={styles.inner}>
             <Typography.Text>让旅游更幸福</Typography.Text>
             <Dropdown.Button
-              style={{marginLeft: 15}}
-              menu={{ items }}
-              icon={<GlobalOutlined/>}
-            > 
+              style={{ marginLeft: 15 }}
+              overlay={
+                <Menu>
+                  <Menu.Item>中文</Menu.Item>
+                  <Menu.Item>English</Menu.Item>
+                </Menu>
+              }
+              icon={<GlobalOutlined />}
+            >
               语言
             </Dropdown.Button>
-
             <Button.Group className={styles["button-group"]}>
               <Button>注册</Button>
-              <Button>登录</Button>
+              <Button>登陆</Button>
             </Button.Group>
           </div>
         </div>
-
         <Layout.Header className={styles["main-header"]}>
-          <img src={logo} alt="log" className={styles["App-logo"]}/>
-          <Typography.Title className={styles.title}>React 旅游网</Typography.Title>
-          <Input.Search 
-            placeholder='请输入目的地、主题、或关键字'
+          <img src={logo} alt="logo" className={styles["App-logo"]} />
+          <Typography.Title level={3} className={styles.title}>
+            React旅游网
+          </Typography.Title>
+          <Input.Search
+            placeholder={"请输入旅游目的地、主题、或关键字"}
             className={styles["search-input"]}
           />
         </Layout.Header>
