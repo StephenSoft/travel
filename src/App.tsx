@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./App.module.css";
-import { Header, Footer, SideMenu, Carousel, ProductCollection } from './components';
+import { Header, Footer, SideMenu, Carousel, ProductCollection, BusinessPartners } from './components';
 import { Row, Col, Typography } from 'antd'
 import { productList1, productList2, productList3 } from './mockup'
 import sideImage from './assets/images/sider_2019_12-09.png';
@@ -49,6 +49,7 @@ function App() {
           />
 
       </div>
+      <BusinessPartners />
       <Footer/> 
     </div>
   );
